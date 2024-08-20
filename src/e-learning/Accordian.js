@@ -2,24 +2,26 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useUser } from "../UserContext";
+import { useNavigate } from "react-router-dom";
 
 const Accordion = ({ title, chapters, subjectId, children }) => {
   const [openIndex, setOpenIndex] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const { isLoggedIn } = useUser();
+  const navigate = useNavigate();
 
   const toggleAccordion = () => {
     setIsOpen(!isOpen);
   };
 
   const handleDelete = (subjectId, chapterId) => {
-    axios
-      .delete(
-        `https://e-learning-backend-28nz.onrender.com/v1/deleteChapter/${subjectId}/${chapterId}`
+    axios.delete(
+        `https://e-learning-backend-28nz.onrender.com/api/v1/deleteChapter/${subjectId}/${chapterId}`
       )
       .then((response) => {
         console.log("Chapter deleted successfully");
-        window.location.reload();
+        // window.location.reload();
+        navigate(0);
         
       })
       .catch((error) => {

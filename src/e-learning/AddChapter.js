@@ -38,14 +38,13 @@ const AddChapter = () => {
       })
       .then((result) => {
         console.log(result);
-        // window.location.reload();
-        navigate("/");
+        navigate(-1);
       })
       .catch((err) => console.log(err));
   };
 
   return (
-    <div className="flex justify-center items-center h-full p-20">
+    <div className="flex justify-center items-center h-full p-20 pt-40">
       <div className="w-96 border border-gray-300 rounded-lg p-4 mb-4 shadow-lg font-[Poppins]">
         <h2 className="text-xl font-extrabold mb-4">Chapter Details</h2>
         <form onSubmit={handleSubmit}>
@@ -119,7 +118,7 @@ const AddChapter = () => {
             type="submit"
             className="px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600"
           >
-          Add
+            Add
           </button>
         </form>
       </div>

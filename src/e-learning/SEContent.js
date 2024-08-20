@@ -13,7 +13,6 @@ const SEContent = () => {
     axios
       .get("https://e-learning-backend-28nz.onrender.com/api/v1/getSubjects")
       .then((response) => {
-        
         const semester3FilteredSubjects = response.data.filter(subject => subject.semesters === 21);
         setSemester3Subjects(semester3FilteredSubjects);
         
@@ -26,7 +25,7 @@ const SEContent = () => {
   }, []);
 
   return (
-    <div className="p-10 font-[Poppins] min-h-screen">
+    <div className="p-10 font-[Poppins] mt-20"> {/* Adjusted mt-20 for Navbar height */}
       <div className="w-6/12 mx-auto my-4">
         <h2 className="text-4xl p-4 text-center font-extrabold mb-4">
           Semester 3 Subjects
@@ -41,7 +40,7 @@ const SEContent = () => {
             {isLoggedIn && (
               <Link
                 to={`/addChapter/${subject._id}`}
-                className="inline-block w-full h-full px-3 py-1 bg-blue-500 text-white rounded-full hover:bg-blue-600 mr-4"
+                className="inline-block px-3 py-1 bg-blue-500 text-white rounded-full hover:bg-blue-600 mr-4"
               >
                 Add Chapter
               </Link>
@@ -49,7 +48,7 @@ const SEContent = () => {
           </Accordion>
         ))}
 
-        <h2 className="text-4xl p-4 text-center font-extrabold mb-4">
+        <h2 className="text-4xl p-4 text-center font-extrabold mb-4 mt-8">
           Semester 4 Subjects
         </h2>
         {semester4Subjects.map((subject) => (
@@ -62,7 +61,7 @@ const SEContent = () => {
             {isLoggedIn && (
               <Link
                 to={`/addChapter/${subject._id}`}
-                className="inline-block w-full h-full px-3 py-1 bg-blue-500 text-white rounded-full hover:bg-blue-600 mr-4"
+                className="inline-block px-3 py-1 bg-blue-500 text-white rounded-full hover:bg-blue-600 mr-4"
               >
                 Add Chapter
               </Link>

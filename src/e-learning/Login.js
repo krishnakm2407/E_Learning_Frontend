@@ -20,14 +20,10 @@ const Login = () => {
       });
       const data = await response.json();
       if (response.ok) {
-        
         localStorage.setItem("token", data.token);
-        
         setIsLoggedIn(true);
-        
         navigate("/");
       } else {
-        
         console.error(data.message);
       }
     } catch (error) {
@@ -36,7 +32,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen pb-40">
+    <div className="flex justify-center items-center h-screen pt-40 pb-20">
       <div className="w-96 border border-gray-300 rounded-lg p-4 mb-4 shadow-lg font-[Poppins]">
         <h2 className="text-xl font-extrabold mb-4">Login</h2>
         <form onSubmit={handleSubmit}>

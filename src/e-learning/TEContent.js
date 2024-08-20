@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useUser } from "../UserContext"; 
 import Accordion from "./Accordian";
 
-const SEContent = () => {
+const TEContent = () => {
   const [semester3Subjects, setSemester3Subjects] = useState([]);
   const [semester4Subjects, setSemester4Subjects] = useState([]);
   const { isLoggedIn } = useUser(); 
@@ -26,7 +26,7 @@ const SEContent = () => {
   }, []);
 
   return (
-    <div className="p-10 font-[Poppins] min-h-screen">
+    <div className="p-10 font-[Poppins] mt-20">
       <div className="w-6/12 mx-auto my-4">
         <h2 className="text-4xl p-4 text-center font-extrabold mb-4">
           Semester 5 Subjects
@@ -74,4 +74,4 @@ const SEContent = () => {
   );
 };
 
-export default SEContent;
+export default TEContent;
