@@ -22,7 +22,7 @@ const Login = () => {
       if (response.ok) {
         localStorage.setItem("token", data.token);
         setIsLoggedIn(true);
-        navigate("/");
+        navigate(-1);
       } else {
         console.error(data.message);
       }
